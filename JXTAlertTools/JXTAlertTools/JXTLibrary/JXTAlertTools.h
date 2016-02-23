@@ -26,7 +26,7 @@
 #define iOS_Version [[[UIDevice currentDevice] systemVersion] floatValue]
 
 /**
- *  空白标题
+ *  空白标题，如果title直接设置为nil，那么message设置的内容直接被上移为title，message无效，字体就是加粗的样式
  */
 #define EmptyTitle iOS_Version >= 7.0 ? @"" : @" "
 
