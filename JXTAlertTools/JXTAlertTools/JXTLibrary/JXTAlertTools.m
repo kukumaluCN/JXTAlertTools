@@ -284,7 +284,7 @@ destructiveButtonTitle:(NSString *)destructiveBtnTitle
         }
         if (cancelBtnTitle) {
             UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelBtnTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                if (cancelBtnTitle) {block(1);}
+                if (destructiveBtnTitle) {block(1);}
                 else {block(0);}
             }];
             [alertController addAction:cancelAction];
