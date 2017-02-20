@@ -237,7 +237,7 @@ destructiveButtonTitle:(NSString *)destructiveBtnTitle
     }
     else
     {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelBtnTitle otherButtonTitles:nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:(id<UIAlertViewDelegate>)self cancelButtonTitle:cancelBtnTitle otherButtonTitles:nil];
         alert.clickBlock = block;
         if (otherButtonTitles)
         {
@@ -329,7 +329,7 @@ destructiveButtonTitle:(NSString *)destructiveBtnTitle
     }
     else
     {
-        UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:cancelBtnTitle destructiveButtonTitle:destructiveBtnTitle otherButtonTitles:nil];
+        UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:(id<UIActionSheetDelegate>)self cancelButtonTitle:cancelBtnTitle destructiveButtonTitle:destructiveBtnTitle otherButtonTitles:nil];
         actionSheet.clickBlock = block;
         if (otherButtonTitles)
         {
@@ -403,7 +403,7 @@ destructiveButtonTitle:(NSString *)destructiveBtnTitle
     }
     else
     {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelBtnTitle otherButtonTitles:nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:(id<UIAlertViewDelegate>)self cancelButtonTitle:cancelBtnTitle otherButtonTitles:nil];
         alert.clickBlock = block;
         
         if (otherBtnTitleArray && otherBtnTitleArray.count)
@@ -472,8 +472,8 @@ destructiveButtonTitle:(NSString *)destructiveBtnTitle
     }
     else
     {
-        //关联代理有警告，但是不能用对象否则代理无效
-        UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:cancelBtnTitle destructiveButtonTitle:destructiveBtnTitle otherButtonTitles:nil];
+        //关联代理强制类型，不能用对象否则代理无效
+        UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:(id<UIActionSheetDelegate>)self cancelButtonTitle:cancelBtnTitle destructiveButtonTitle:destructiveBtnTitle otherButtonTitles:nil];
         actionSheet.clickBlock = block;
         
         if (otherBtnTitleArray && otherBtnTitleArray.count)
